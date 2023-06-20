@@ -33,5 +33,26 @@ const displayAdviceId = idAdvice => {
     `
 
 }
-
 loadAdviceId('1');
+
+
+const loadAdviceSearch = (adviceSearch) => {
+    const url = `https://api.adviceslip.com/advice/search/${adviceSearch}`;
+    fetch(url)
+    .then(res => res.json())
+    .then(data => displayadviceSearch(data.slips[0]))
+}
+
+const displayadviceSearch = searchAdvice => {
+    const inputIdField2 = document.getElementById('input-search');
+    const adviceSearch = inputIdField2.value;
+    loadAdviceSearch(adviceSearch);
+    const searchAdviceContainer = document.getElementById('search-advice');
+    searchAdviceContainer.innerHTML= `
+        <p class="fs-4">Advice: ${searchAdvice.id}</p>
+        <h3>${searchAdvice.advice}</h3>
+    `
+
+}
+
+loadAdviceSearch('help');
