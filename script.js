@@ -31,6 +31,7 @@ const displayAdviceId = idAdvice => {
         <p class="fs-4">Advice: ${idAdvice.id}</p>
         <h3>${idAdvice.advice}</h3>
     `
+    inputIdField.value = ""
 
 }
 loadAdviceId('1');
@@ -52,7 +53,8 @@ const displayadviceSearch = searchAdvice => {
         <p class="fs-4">Advice: ${searchAdvice.id}</p>
         <h3>${searchAdvice.advice}</h3>
     `
+    inputIdField2.value = ""
 
 }
 
-loadAdviceSearch('help');
+loadAdviceSearch('spiders');
